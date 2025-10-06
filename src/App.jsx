@@ -23,16 +23,35 @@ function App() {
       onUpdate: function () {
         if (this.progress() >= 0.9) {
           document.querySelector(".svg").remove();
+          // Hide the root div after animation
+          const rootDiv = document.getElementById('root');
+          if (rootDiv) {
+            rootDiv.style.display = 'none';
+          }
           setShowContent(true);
           this.kill();
         }
       },
     });
   });
-return (
 
-<>
-<div className="svg flex items-center justify-center fixed top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-[#000]">
+  const svgContainerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    zIndex: 100,
+    width: '100%',
+    height: '100vh',
+    overflow: 'hidden',
+    backgroundColor: '#000'
+  };
+
+  return (
+    <>
+      <div className="svg" style={svgContainerStyle}>
         <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
           <defs>
             <mask id="viMask">
@@ -62,8 +81,8 @@ return (
           />
         </svg>
       </div>
-</>
-);
+    </>
+  );
 }
-export default App;
 
+export default App;
