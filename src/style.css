@@ -1,12 +1,13 @@
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  width: 100%;
+  width: 100vw;
   min-height: 100svh;
   overflow-x: hidden;
   overflow: hidden; /* prevent horizontal scrolling initially */
@@ -135,7 +136,6 @@ body {
   width: 100%;
   line-height: 0.9;
   margin-top: 55%;
-  font-weight: bold;
 }
 
 .hero-2-container {
@@ -155,7 +155,6 @@ body {
   );
   -webkit-text-fill-color: transparent;
   font-size: 6rem;
-  font-weight: bold;
   background-clip: text;
   display: flex;
   flex-direction: column;
@@ -168,19 +167,13 @@ body {
 }
 
 .hero-2-container p {
-  max-width: 100%;
+  max-width: 90%;
   font-size: 1rem;
 }
 
 .hero-2-container h3 {
   font-size: 2.5rem;
- 
 }
-
-
-
-
-
 
 @media (min-width: 1024px) {
   .hero-text {
