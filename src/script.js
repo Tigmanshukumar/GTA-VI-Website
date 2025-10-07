@@ -216,6 +216,60 @@ window.addEventListener('scroll', () => {
   lastScrollTop = scrollTop;
 });
 
+// Vice City Legends animations
+const legendProfiles = document.querySelectorAll('.legend-profile');
+
+// Create a staggered animation for each legend profile
+legendProfiles.forEach((profile, index) => {
+  gsap.to(profile, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: profile,
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    },
+    delay: index * 0.2 // Stagger the animations
+  });
+  
+  // Add a shine effect to the legend name
+  const legendName = profile.querySelector('.legend-name');
+  if (legendName) {
+    gsap.to(legendName, {
+      backgroundPosition: "200% center",
+      duration: 2,
+      repeat: -1,
+      ease: "linear",
+      scrollTrigger: {
+        trigger: profile,
+        start: "top 80%",
+      }
+    });
+  }
+  
+  // Add a subtle hover animation for the image
+  const legendImage = profile.querySelector('.legend-image');
+  if (legendImage) {
+    profile.addEventListener('mouseenter', () => {
+      gsap.to(legendImage, {
+        scale: 1.05,
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    });
+    
+    profile.addEventListener('mouseleave', () => {
+      gsap.to(legendImage, {
+        scale: 1,
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    });
+  }
+});
+
 // logo purple
 tl.fromTo(
   ".hero-text-logo",
@@ -290,5 +344,5 @@ tl.fromTo(
     duration: 3,
   },
   "<1.2" // starts 1.2 seconds before the previous animation
-  // he times from the start of the previous animation and since we're using 1.5s for the prev duration it's like 70% of the previous animation
+  // he times from the start of the previous animation and since I using 1.5s for the prev duration it's like 70% of the previous animation
 );
