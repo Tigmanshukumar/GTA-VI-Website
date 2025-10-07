@@ -98,8 +98,123 @@ tl.fromTo(
        rgba(32, 31, 66, 0) 140.599vh)`,
     duration: 3,
   },
-  "<1.2" // starts 1.2 seconds before the previous animation
 );
+
+// Character Sections Animations
+const characterSections = document.querySelectorAll('.character-section');
+characterSections.forEach((section) => {
+  const content = section.querySelector('.character-content');
+  const info = section.querySelector('.character-info');
+  const imageContainer = section.querySelector('.character-image-container');
+  
+  gsap.set([info, imageContainer], { opacity: 0, y: 50 });
+  
+  ScrollTrigger.create({
+    trigger: section,
+    start: 'top 70%',
+    onEnter: () => {
+      gsap.to(info, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 0.2
+      });
+      
+      gsap.to(imageContainer, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.3,
+        ease: 'power3.out'
+      });
+    },
+    once: true
+  });
+});
+
+// Leonida Section Animation
+const leonidaSection = document.querySelector('.leonida-section');
+const sectionTitle = leonidaSection.querySelector('.section-title');
+const sectionDesc = leonidaSection.querySelector('.section-description');
+const characterCards = leonidaSection.querySelectorAll('.character-card');
+
+gsap.set([sectionTitle, sectionDesc], { opacity: 0, y: 30 });
+gsap.set(characterCards, { opacity: 0, y: 50 });
+
+ScrollTrigger.create({
+  trigger: leonidaSection,
+  start: 'top 70%',
+  onEnter: () => {
+    gsap.to(sectionTitle, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+    
+    gsap.to(sectionDesc, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      delay: 0.2,
+      ease: 'power3.out'
+    });
+    
+    gsap.to(characterCards, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      delay: 0.4,
+      ease: 'power3.out'
+    });
+  },
+  once: true
+});
+
+// Mobile Menu Toggle
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const mainNav = document.querySelector('.main-nav');
+
+mobileMenuToggle.addEventListener('click', () => {
+  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+  mobileMenuToggle.classList.toggle('active');
+});
+
+// Navigation link highlighting
+const navLinksItems = document.querySelectorAll('.nav-link');
+navLinksItems.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinksItems.forEach(item => item.classList.remove('active'));
+    link.classList.add('active');
+    
+    // Close mobile menu after clicking a link
+    if (window.innerWidth < 768) {
+      navLinks.style.display = 'none';
+      mobileMenuToggle.classList.remove('active');
+    }
+  });
+});
+
+// Show/hide navigation on scroll
+let lastScrollTop = 0;
+const heroSection = document.querySelector('.hero-main-container');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const heroHeight = heroSection.offsetHeight;
+  
+  // Show nav when scrolled past hero section
+  if (scrollTop > heroHeight * 0.7) {
+    mainNav.classList.add('visible');
+  } else {
+    mainNav.classList.remove('visible');
+  }
+  
+  lastScrollTop = scrollTop;
+});
 
 // logo purple
 tl.fromTo(

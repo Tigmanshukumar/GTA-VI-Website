@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+      <div class="nav-logo">
+        <img src="/gta_logo_purple.webp" alt="GTA VI Logo" class="nav-logo-img">
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Home</a>
+        <a href="#jason-section" class="nav-link">Jason</a>
+        <a href="#lucia-section" class="nav-link">Dimez</a>
+        <a href="#leonida-section" class="nav-link">Leonida</a>
+        <a href="#" class="nav-link cta-button">Pre-Order</a>
+      </div>
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    
     <div class="container">
       <div class="overlay"></div>
       <div class="hero-1-container">
@@ -44,8 +63,9 @@
           conspiracy stretching across the state of Leonida — forced to rely on
           each other more than ever if they want to make it out alive.
         </p>
+        <p style="font-size: 14px;" >Made by Tigmanshu</p> 
       </div>
-      <!-- Scroll Indicator -->
+          <!-- Scroll Indicator -->
       <div class="scroll-indicator">
         <svg
           width="34"
@@ -66,6 +86,82 @@
         </svg>
       </div>
     </div>
+    
+    <!-- Character Sections -->
+    <div class="character-section" id="jason-section">
+      <div class="character-content">
+        <div class="character-info">
+          <h2 class="character-name">Jason Duval</h2>
+          <h3 class="character-tagline">Jason wants an easy life, but things just keep getting harder.</h3>
+          <p class="character-description">
+            Jason grew up around grifters and crooks. After a stint in the Army trying to shake off his troubled teens, 
+            he found himself in the Keys doing what he knows best, working for local drug runners. It might be time to try something new.
+          </p>
+          <p class="character-quote">"Another day in paradise, right?"</p>
+          <p class="character-description">
+            Meeting Lucia could be the best or worst thing to ever happen to him. 
+            Jason knows how he'd like it to turn out but right now, it's hard to tell.
+          </p>
+        </div>
+        <div class="character-image-container">
+          <div class="character-image jason-image"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="character-section" id="lucia-section">
+      <div class="character-content reverse">
+        <div class="character-image-container">
+          <div class="character-image lucia-image"></div>
+        </div>
+        <div class="character-info">
+          <h2 class="character-name">Real Dimez</h2>
+          <h3 class="character-tagline">Dimez's father taught her to fight as soon as she could walk.</h3>
+          <p class="character-description">
+            Life has been coming at her swinging ever since. Fighting for her family landed her in the Leonida Penitentiary. 
+            Sheer luck got her out. Lucia's learned her lesson — only smart moves from here.
+          </p>
+          <p class="character-quote">"The only thing that matters is who you know and what you got."</p>
+          <p class="character-description">
+            Fresh out of prison and ready to change the odds in her favor, Lucia's committed to her plan — no matter what it takes.
+            A life with Jason could be her way out.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Only in Leonida Section -->
+    <div class="leonida-section" id="leonida-section">
+      <h2 class="section-title">Only in Leonida</h2>
+      <p class="section-description">When the sun fades and the neon glows, everyone has something to gain — and more to lose.</p>
+      
+      <div class="supporting-characters">
+        <div class="character-card">
+          <div class="character-card-image cal-image"></div>
+          <h3>Cal Hampton</h3>
+          <p class="character-quote">"What if everything on the internet was true?"</p>
+          <p>Jason's friend and a fellow associate of Brian's, Cal feels safest hanging at home, snooping on Coast Guard comms with a few beers and some private browser tabs open.</p>
+          <p class="character-quote">"The psychopaths are in charge. Get used to it."</p>
+        </div>
+        
+        <div class="character-card">
+          <div class="character-card-image boobie-image"></div>
+          <h3>Boobie Ike</h3>
+          <p class="character-quote">"It's all about heart — the Jack of Hearts."</p>
+          <p>Boobie is a local Vice City legend — and acts like it. One of the few to transform his time in the streets into a legitimate empire spanning real estate, a strip club, and a recording studio.</p>
+          <p class="character-quote">"Top quality cuts."</p>
+        </div>
+        
+        <div class="character-card">
+          <div class="character-card-image dreq-image"></div>
+          <h3>Dre'Quan Priest</h3>
+          <p class="character-quote">"Only Raw... Records"</p>
+          <p>Dre'Quan was always more of a hustler than a gangster. Even when he was dealing on the streets to make ends meet, breaking into music was the goal.</p>
+          <p class="character-quote">"You're with the label now."</p>
+        </div>
+      </div>
+    </div>
+    
     <div id="root"></div>
     
   </body>

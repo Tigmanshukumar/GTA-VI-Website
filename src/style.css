@@ -5,6 +5,99 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  cursor: url('/GTA VI Logo--cursor--SweezyCursors.png'), pointer;
+}
+
+/* Navigation Styles */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  background: rgba(17, 17, 23, 0.8);
+  backdrop-filter: blur(10px);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.main-nav.visible {
+  transform: translateY(0);
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+.nav-logo-img {
+  height: 100%;
+}
+
+.nav-links {
+  display: none;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #ffb0c4;
+}
+
+.nav-link.cta-button {
+  background: #ffb0c4;
+  color: #111117;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.nav-link.cta-button:hover {
+  background: #ff8ca8;
+  color: #111117;
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobile-menu-toggle {
+    display: none;
+  }
+}
+
 body {
   width: 100%;
   min-height: 100svh;
@@ -67,7 +160,7 @@ body {
   inset: 0;
   z-index: 1;
   object-fit: cover;
-}
+ }
 
 .hero-text-logo-container {
   width: 100%;
@@ -174,6 +267,199 @@ body {
   font-size: 2.5rem;
 }
 
+
+/* Character Sections */
+.character-section {
+  min-height: 100vh;
+  background: linear-gradient(
+    223.17deg,
+    rgb(28, 24, 41) 0%,
+    rgb(27, 24, 40) 8.61%,
+    rgb(25, 23, 36) 17.21%,
+    rgb(22, 21, 32) 25.82%,
+    rgb(20, 19, 28) 34.42%,
+    rgb(18, 18, 24) 43.03%,
+    rgb(17, 17, 23) 51.63%
+  );
+  color: #fff;
+  padding: 4rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.character-info {
+  flex: 1;
+  padding: 1rem;
+}
+
+.character-name {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffb0c4;
+}
+
+.character-tagline {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+}
+
+.character-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.character-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ffb0c4;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 3px solid #ffb0c4;
+}
+
+.character-image-container {
+  flex: 1;
+  min-height: 400px;
+  position: relative;
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.jason-image {
+  background-image: url('/public/gta-6-jason-duval-phone-wallpaper-4k-uhdpaper.com-6@5@f.jpg');
+  background-position: top center;
+}
+
+.lucia-image {
+  background-image: url('/public/Real_Dimez_01.jpg');
+  background-position: top center;
+}
+
+/* Leonida Section */
+.leonida-section {
+  min-height: 100vh;
+  background: linear-gradient(
+    223.17deg,
+    rgb(28, 24, 41) 0%,
+    rgb(27, 24, 40) 8.61%,
+    rgb(25, 23, 36) 17.21%,
+    rgb(22, 21, 32) 25.82%,
+    rgb(20, 19, 28) 34.42%,
+    rgb(18, 18, 24) 43.03%,
+    rgb(17, 17, 23) 51.63%
+  );
+  color: #fff;
+  padding: 4rem 1rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ffb0c4;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.supporting-characters {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.character-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.character-card h3 {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  color: #ffb0c4;
+}
+
+.character-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  
+}
+
+.character-card-image {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.cal-image {
+  background-image: url('/public/Leonida_Keys_01.jpg');
+  
+}
+
+.boobie-image {
+  background-image: url('/public/Leonida_Keys_03.jpg');
+}
+
+.dreq-image {
+  background-image: url('/public/Leonida_Keys_05.jpg');
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .character-content {
+    flex-direction: row;
+  }
+  
+  .character-content.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .supporting-characters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .character-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+  }
+}
+
 @media (min-width: 1024px) {
   .hero-text {
     font-size: 6rem;
@@ -196,5 +482,29 @@ body {
 
   .hero-2-container h3 {
     font-size: 3.5rem;
+  }
+  
+  .character-name {
+    font-size: 3.5rem;
+  }
+  
+  .character-tagline {
+    font-size: 2rem;
+  }
+  
+  .character-description {
+    font-size: 1.2rem;
+  }
+  
+  .character-quote {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 4rem;
+  }
+  
+  .section-description {
+    font-size: 1.5rem;
   }
 }
