@@ -5,10 +5,23 @@
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+
 html {
   scroll-behavior: smooth;
-  cursor: url('/GTA VI Logo--cursor--SweezyCursors.png'), pointer;
+  cursor: url('/GTA VI Logo--cursor--SweezyCursors.png'), auto;
 }
+
+/* Force same cursor everywhere */
+a,
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  cursor: url('/GTA VI Logo--pointer--SweezyCursors.png'), auto !important;
+}
+
+
 
 /* Navigation Styles */
 .main-nav {
@@ -56,6 +69,7 @@ html {
   padding: 0.5rem 1rem;
   border-radius: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  
 }
 
 .nav-link {
