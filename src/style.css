@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 html {
@@ -51,7 +51,7 @@ html {
 
 .nav-links {
   display: none;
-  background: rgba(17, 17, 23, 0.8);
+  background: rgba(17, 17, 23, 0.527);
   backdrop-filter: blur(10px);
   padding: 0.5rem 1rem;
   border-radius: 30px;
@@ -539,12 +539,14 @@ body {
   font-size: 1.8rem;
   margin: 1rem 0;
   color: #ffb0c4;
+  text-align: left;
 }
 
 .character-card p {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
+  text-align: left;
   color: rgba(255, 255, 255, 0.8);
   
 }
@@ -569,6 +571,54 @@ body {
 .dreq-image {
   background-image: url('/public/Leonida_Keys_05.jpg');
 }
+
+/* Marquee Styles */
+.marquee-container {
+  width: 100%;
+  padding: 2.5rem 0;
+  background-color: #0a0a0a; /* dark background to match your site */
+  overflow: hidden;
+}
+
+.marquee-border {
+  border-top: 2px solid #ec4899; /* pink border */
+  border-bottom: 2px solid #ec4899; /* pink border */
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee-text {
+  font-size: 5vw;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  font-weight: 700;
+  padding-right: 2.5rem;
+  animation: marquee 5s linear infinite;
+  display: inline-block;
+  background: linear-gradient(
+    45deg,
+    #ec4899 0%,
+    #a855f7 30%,
+    #6366f1 60%,
+    #3b82f6 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 
 /* Responsive Styles */
 @media (min-width: 768px) {
