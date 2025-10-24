@@ -161,6 +161,7 @@ body {
     rgb(18, 18, 24) 43.03%,
     rgb(17, 17, 23) 51.63%
   );
+  box-shadow: 0 0 15px rgba(255, 176, 196, 0.15) inset;
 }
 
 .overlay {
@@ -592,6 +593,7 @@ body {
   padding: 2.5rem 0;
   background-color: #0a0a0a; /* dark background to match your site */
   overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 176, 196, 0.15) inset;
 }
 
 .marquee-border {
